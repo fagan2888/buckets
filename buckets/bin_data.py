@@ -10,7 +10,7 @@ scipy.stats.binned_statistic does the same thing as bin_x (but they require edge
 import numpy as np
 
 def standardarray(x):
-    if x != np.ndarray:
+    if type(x) != np.ndarray:
         x = np.array(x)
     return x
 
