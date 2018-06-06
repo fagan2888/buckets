@@ -10,12 +10,21 @@ scipy.stats.binned_statistic does the same thing as bin_x (but they require edge
 import numpy as np
 
 def standardarray(x):
-    if x! != np.ndarray:
+    if x != np.ndarray:
         x = np.array(x)
     return x
 
 def bin_x(x, y, gx):
-    """ bin_x bins the input data 'x' into centers at 'gx' and calculates the mean of 'y' in those bins. 
+    """ Bins the input data `x` into centers at `gx` and calculates the mean of `y` in those bins.
+
+    Returns
+    =======
+    bin_means
+        Mean of y in each bin.
+    bin_std
+        Standard deviation of y in each bin.
+    N
+        Number of elements in each bin.
     """
     # Make sure the format is correct.
     x = standardarray(x)
@@ -45,7 +54,18 @@ def bin_x(x, y, gx):
     return bin_means, bin_std, N
 
 def bin_n(x, y, n):
-    """ bin_n bins the input data 'x' into 'n' bins and calculates the mean of 'y' in those bins.
+    """ Bins the input data `x` into 'n' bins and calculates the mean of `y` in those bins. Each bin contains the same number of elements.
+
+    Returns
+    =======
+    X
+        Bin centers.
+    Y
+        Average values of `y` in each bin.
+    S
+        Standard deviation of `y` in each bin.
+    Sm
+        Standard error of `y` in each bin.
     """
     # Make sure the format is correct.
     x = standardarray(x)
