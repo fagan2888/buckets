@@ -21,13 +21,22 @@ def standardarray(x):
 def bin_x(x, y, gx):
     """Bins the input data `x` into centers at `gx` and calculates the mean of `y` in those bins.
 
+    Parameters
+    ----------
+    x : array-like
+        `x` value to bin `y` value data by.
+    y : array-like
+        `y` value to average over each `x` bin.
+    gx : array-like
+        Bin centers over which to calculate averages of `y`.
+
     Returns
     -------
-    bin_means
+    bin_means : np.array
         Mean of y in each bin.
-    bin_std
+    bin_std : np.array
         Standard deviation of y in each bin.
-    N
+    N : np.array
         Number of elements in each bin.
     """
     # Make sure the format is correct.
@@ -58,17 +67,26 @@ def bin_x(x, y, gx):
     return bin_means, bin_std, N
 
 def bin_n(x, y, n):
-    """ Bins the input data `x` into 'n' bins and calculates the mean of `y` in those bins. Each bin contains the same number of elements.
+    """Bins the input data `x` into 'n' bins and calculates the mean of `y` in those bins. Each bin contains the same number of elements.
+
+    Parameters
+    ----------
+    x : array-like
+        `x` value to bin `y` value data by.
+    y : array-like
+        `y` value to average over each `x` bin.
+    n : int
+        Number of elements to include in each bin.
 
     Returns
     -------
-    X
+    X : np.array
         Bin centers.
-    Y
+    Y : np.array
         Average values of `y` in each bin.
-    S
+    S : np.array
         Standard deviation of `y` in each bin.
-    Sm
+    Sm : np.array
         Standard error of `y` in each bin.
     """
     # Make sure the format is correct.
@@ -81,20 +99,20 @@ def bin_n(x, y, n):
     # Sort the y values according to this x-sorting.
     y = y[ind]
 
-    # Create the bins. 
+    # Create the bins.
     min_i = np.arange(0,len(x),n)
     max_i = np.arange(0,len(x),n) - 1
     min_i = min_i[:-1]
     max_i = max_i[1:]
     max_i[-1] = len(x)
 
-    # Initialize the vectors holding the binned values. 
+    # Initialize the vectors holding the binned values.
     X = np.ones(min_i.shape)
     Y = np.ones(min_i.shape)
     S = np.ones(min_i.shape)
     Sm = np.ones(min_i.shape)
-    
-    # Calculate the average within each bin and put into the initialized vectors. 
+
+    # Calculate the average within each bin and put into the initialized vectors.
     for i in range(len(max_i)):
         X[i] = np.mean(x[min_i[i]:max_i[i]])
         Y[i] = np.mean(y[min_i[i]:max_i[i]])
