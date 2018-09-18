@@ -76,7 +76,7 @@ pygments_style = 'sphinx'
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'alabaster'
+html_theme = 'basic'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -99,6 +99,8 @@ html_static_path = ['_static']
 #
 # html_sidebars = {}
 
+
+html_domain_indies = True
 
 # -- Options for HTMLHelp output ---------------------------------------------
 
