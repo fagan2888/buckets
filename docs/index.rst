@@ -10,7 +10,9 @@ Welcome to buckets's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   source/modules
 
+   readme
 
 Indices and tables
 ==================
