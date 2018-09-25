@@ -10,14 +10,11 @@ Welcome to buckets's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-<<<<<<< HEAD
    LICENSE
 
-=======
    _source/modules
 
    readme
->>>>>>> c227580ffc362bf1ec964ab7bc9f9515367c54c7
 
 
 Indices and tables
