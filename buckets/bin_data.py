@@ -55,8 +55,6 @@ def bin_x(x, y, gx):
     binwidth = np.diff(gx)
     gx = np.hstack((gx[0] - binwidth[0]/2., gx[:-1] + binwidth/2., gx[-1] + binwidth[-1]/2))
 
-    # NOT DONE: Shift bins so the interval is '( ]' instead of '[ )'.
-
     # Determine which bin each y value belongs to.
     binind = np.digitize(x, gx)
     # Take the sum of each bin and then divide it by the total count in each bin (average).
